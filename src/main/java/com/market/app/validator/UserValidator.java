@@ -4,10 +4,12 @@ import com.market.app.model.User;
 import com.market.app.service.UserService;
 import org.omg.CosNaming.NamingContextPackage.NotEmpty;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+@Component
 public class UserValidator implements Validator {
 
     @Autowired

@@ -13,9 +13,18 @@ import java.util.Set;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "SEQR")
+    @SequenceGenerator(name = "SEQR", sequenceName = "ROLE_SEQ")
     private Long id;
     private String name;
     @ManyToMany(mappedBy = "roles")//mappedBy-means roles is the side which is owner
     private Set<User> users;
+
+    public Role() {
+    }
+
+    public Role(String name, Set<User> users) {
+        this.name = name;
+        this.users = users;
+    }
 }
